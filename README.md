@@ -1,18 +1,21 @@
 
+
 # Librerias
 
 ```bash
+nvm use v18
 npm install @react-navigation/native
 npm install react-native-screens react-native-safe-area-context
 npm install @react-navigation/stack
 npm install react-native-gesture-handler
-npm install react-native-gesture-handler
+
+nvm use v18
+# libreria de iconos
+npm install --save react-native-vector-icons
 
 cd ios && pod install && cd ..
 
-
-# using npm
-npm start
+npx react-native start --reset-cache
 
 # OR using Yarn
 yarn start

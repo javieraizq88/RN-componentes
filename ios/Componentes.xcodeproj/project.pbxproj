@@ -46,7 +46,8 @@
 		81AB9BB72411601600AC10FF /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; name = LaunchScreen.storyboard; path = Componentes/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		89C6BE57DB24E9ADA2F236DE /* Pods-Componentes-ComponentesTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Componentes-ComponentesTests.release.xcconfig"; path = "Target Support Files/Pods-Componentes-ComponentesTests/Pods-Componentes-ComponentesTests.release.xcconfig"; sourceTree = "<group>"; };
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
-		F0557AA7FF3F1B7D75EB7CC9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; name = PrivacyInfo.xcprivacy; path = Componentes/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		F0557AA7FF3F1B7D75EB7CC9 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xml; name = PrivacyInfo.xcprivacy; path = Componentes/PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		FB5B46F42C49AE8A003D2384 /* Ionicons.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = Ionicons.ttf; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +122,7 @@
 		83CBB9F61A601CBA00E9B192 = {
 			isa = PBXGroup;
 			children = (
+				FB66C6BD2C49A6C500375678 /* Fonts */,
 				13B07FAE1A68108700A75B9A /* Componentes */,
 				832341AE1AAA6A7D00B99B32 /* Libraries */,
 				00E356EF1AD99517003FC87E /* ComponentesTests */,
@@ -151,6 +153,14 @@
 				89C6BE57DB24E9ADA2F236DE /* Pods-Componentes-ComponentesTests.release.xcconfig */,
 			);
 			path = Pods;
+			sourceTree = "<group>";
+		};
+		FB66C6BD2C49A6C500375678 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				FB5B46F42C49AE8A003D2384 /* Ionicons.ttf */,
+			);
+			path = Fonts;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
