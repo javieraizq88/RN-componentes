@@ -6,7 +6,6 @@ interface Props {
     text: string,
     safe?: boolean,
     white?: boolean
-
 }
 
 export const Titulo = ({ text, safe = false, white = false }: Props) => {
