@@ -70,7 +70,6 @@ const uiMenuItems = [
 
 ]
 
-
 export const HomeScreen = () => {
     return (
         <View style={[globalStyles.mainContainer]} >
