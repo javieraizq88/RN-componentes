@@ -5,6 +5,7 @@ import { Animation102Screen } from '../screens/animations/Animation102Screen';
 import { SwitchScreen } from '../screens/switches/SwitchScreen';
 import { AlertScreen } from '../screens/alert/AlertScreen';
 import { TextInputScreen } from '../screens/inputs/TextInputScreen';
+import { PullToRefreshScreen } from '../components/ui/PullToRefreshScreen';
 
 const Stack = createStackNavigator();
 
@@ -13,12 +14,14 @@ export const Navigator =() => {
     <Stack.Navigator screenOptions={{
         headerShown: false
     }}>
-      <Stack.Screen name="HomeScreen" component={HomeScreen} />
-      <Stack.Screen name="Animation101Screen" component={Animation101Screen} />
-      <Stack.Screen name="Animation102Screen" component={Animation102Screen} />
-      <Stack.Screen name="SwitchScreen" component={SwitchScreen} />
+      <Stack.Screen name="Home" component={HomeScreen} />
+      <Stack.Screen name="Animation1 01" component={Animation101Screen} />
+      <Stack.Screen name="Animation1 02" component={Animation102Screen} />
+      <Stack.Screen name="Switch" component={SwitchScreen} />
       <Stack.Screen name="alert" component={AlertScreen} />
-      <Stack.Screen name="input" component={TextInputScreen} />
+      <Stack.Screen name="Text Input" component={TextInputScreen} />
+      <Stack.Screen name="Pull To Refresh" component={PullToRefreshScreen} />
+      
     </Stack.Navigator>
   );
 }
