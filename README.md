@@ -8,6 +8,7 @@ npm install @react-navigation/native
 npm install react-native-screens react-native-safe-area-context
 npm install @react-navigation/stack
 npm install react-native-gesture-handler
+npm i react-native-prompt-android --save
 
 nvm use v18
 # libreria de iconos

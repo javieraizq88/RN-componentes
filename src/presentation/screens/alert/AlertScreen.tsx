@@ -1,7 +1,10 @@
-import { Alert, Button, StyleSheet, View } from "react-native"
+import { Alert, Button, View } from "react-native"
+import prompt from 'react-native-prompt-android';
+
 import { CustomView } from "../../components/ui/CustomView";
 import { Titulo } from "../../components/ui/Titulo";
 import { globalStyles } from "../../../config/theme/theme";
+import { showPrompt } from "../../../config/adapters/prompt.adapter";
 
 export const AlertScreen = () => {
 
@@ -17,9 +20,9 @@ export const AlertScreen = () => {
 
     const createThreeButtonAlert = () =>
         Alert.alert('Alert Title', 'My Alert Msg', [
-            { 
-                text: 'OK', 
-                onPress: () => console.log('OK Pressed') 
+            {
+                text: 'OK',
+                onPress: () => console.log('OK Pressed')
             },
             {
                 text: 'Ask me later',
@@ -31,23 +34,36 @@ export const AlertScreen = () => {
                 style: 'destructive',
             },
         ],
-    {
-        cancelable: true,
-        onDismiss() {
-            console.log("onDismiss")
-        }
-    });
+            {
+                cancelable: true,
+                onDismiss() {
+                    console.log("onDismiss")
+                }
+            });
 
 
-    const showPrompt = () => {
-        Alert.prompt(
-            "correo electronico",
-            "lorem ipsum",
-            (valor: string) => console.log({ valor }),
-            "secure-text",
-            "valor por defecto",
-            "number-pad"
-        )
+    const onShowPrompt = () => {
+
+        showPrompt({
+            title: "title",
+            subtitle: "subtitle",
+            buttons: [
+                {
+                    title: "ok",
+                    onPress: () => console.log("ok"),
+                }
+            ],
+            placeholder: "placebolder"
+        })
+        // codigo natiov solo valido para IOS
+        // Alert.prompt(
+        //     "correo electronico",
+        //     "lorem ipsum",
+        //     (valor: string) => console.log({ valor }),
+        //     "secure-text",
+        //     "valor por defecto",
+        //     "number-pad"
+        // )
     }
 
     return (
@@ -56,8 +72,8 @@ export const AlertScreen = () => {
 
             <Button
                 title='alerta 2 botones'
-                onPress={createTwoButtonAlert} 
-                />
+                onPress={createTwoButtonAlert}
+            />
 
             <View style={{ height: 10 }} />
 
@@ -69,16 +85,8 @@ export const AlertScreen = () => {
 
             <Button
                 title='menu '
-                onPress={showPrompt} />
+                onPress={onShowPrompt} />
 
         </CustomView>
     )
 }
-
-const styles = StyleSheet.create({
-    container: {
-        flex: 1,
-        justifyContent: 'space-around',
-        alignItems: 'center',
-    },
-});
