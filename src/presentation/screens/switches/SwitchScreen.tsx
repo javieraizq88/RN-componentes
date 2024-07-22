@@ -3,6 +3,7 @@ import { CustomView } from "../../components/ui/CustomView"
 import { Card } from "../../components/ui/Card"
 import { useState } from "react"
 import { CustomSwitch } from "../../components/ui/CustomSwitch"
+import { Separetor } from "../../components/ui/Separetor"
 
 export const SwitchScreen = () => {
 
@@ -24,13 +25,14 @@ export const SwitchScreen = () => {
                     onChange={(value) => useState({ ...state, isActive: value })}
                     text="is Active"
                 />
+                <Separetor />
 
                 <CustomSwitch
                     isOn={state.opcion1}
                     onChange={(value) => useState({ ...state, opcion1: value })}
                     text="opcion 1"
                 />
-
+                <Separetor />
                 <CustomSwitch
                     isOn={state.opcion2}
                     onChange={(value) => useState({ ...state, opcion2: value })}

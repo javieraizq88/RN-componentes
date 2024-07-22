@@ -7,8 +7,6 @@ interface Props {
     children?: ReactNode;
 }
 
-
-
 export const CustomView = ({ style, children }: Props) => {
     return (
         <View style={[globalStyles.mainContainer, style]}>
