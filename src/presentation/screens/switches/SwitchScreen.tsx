@@ -1,19 +1,52 @@
-import { Text, View } from "react-native"
+import { Switch, Text, View } from "react-native"
 import { CustomView } from "../../components/ui/CustomView"
 import { Card } from "../../components/ui/Card"
-import { Button } from "../../components/ui/Button"
+import { useState } from "react"
+import { CustomSwitch } from "../../components/ui/CustomSwitch"
 
 export const SwitchScreen = () => {
+
+    // const [isEnabled, setIsEnabled] = useState(false);
+    // const toggleSwitch = () => setIsEnabled(previousState => !previousState);
+
+    const [state, setState] = useState({
+        isActive: true,
+        opcion1: false,
+        opcion2: true
+    })
+
     return (
         <CustomView style={{ margin: 100 }}>
             <Card>
-                {/* <Text>SwitchScreen</Text> */}
 
-                <Button
-                    text="click"
-                    onPress={() => { }}
+                <CustomSwitch
+                    isOn={state.isActive}
+                    onChange={(value) => useState({ ...state, isActive: value })}
+                    text="is Active"
                 />
+
+                <CustomSwitch
+                    isOn={state.opcion1}
+                    onChange={(value) => useState({ ...state, opcion1: value })}
+                    text="opcion 1"
+                />
+
+                <CustomSwitch
+                    isOn={state.opcion2}
+                    onChange={(value) => useState({ ...state, opcion2: value })}
+                    text="opcion 2"
+                />
+
+                {/* <Switch
+                  trackColor={{false: '#767577', true: '#81b0ff'}}
+                  thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
+                  ios_backgroundColor="#3e3e3e"
+                  onValueChange={toggleSwitch}
+                  value={isEnabled}
+                /> */}
+
             </Card>
         </CustomView>
+
     )
 }
