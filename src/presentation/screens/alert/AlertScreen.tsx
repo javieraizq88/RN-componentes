@@ -67,7 +67,7 @@ export const AlertScreen = () => {
     }
 
     return (
-        <CustomView style={globalStyles.globalMargin}>
+        <CustomView margin>
             <Titulo safe text="Alertas" />
 
             <Button
