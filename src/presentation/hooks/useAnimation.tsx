@@ -1,5 +1,5 @@
 import { useRef } from "react";
-import { Animated, Easing, Text, View } from "react-native"
+import { Animated, Easing } from "react-native"
 
 export const useAnimation = () => {
 
