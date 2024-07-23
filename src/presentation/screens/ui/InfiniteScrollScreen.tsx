@@ -1,9 +1,10 @@
 import { useState } from "react"
-import { Text, View } from "react-native"
+import { Image, Text, View } from "react-native"
 import { CustomView } from "../../components/ui/CustomView";
 import { Titulo } from "../../components/ui/Titulo";
 import { FlatList } from "react-native-gesture-handler";
 import { colors } from "../../../config/theme/theme";
+import { ActivityIndicator } from "react-native";
 
 export const InfiniteScrollScreen = () => {
 
@@ -19,27 +20,38 @@ export const InfiniteScrollScreen = () => {
     };
 
     return (
-        <CustomView margin>
-            <Titulo safe text="Infinite scroll" />
-
+        <View style={{ backgroundColor: "black" }} >
             <FlatList
                 data={numbers}
                 onEndReached={loadMore}
                 onEndReachedThreshold={0.5}
                 keyExtractor={(item) => item.toString()}
 
-                renderItem={({ item }) => (
-                    <Text style={{
-                        height: 300,
-                        backgroundColor: colors.primary,
-                        color: "white",
-                        fontSize: 30
-
-                    }} >
-                        {item}
-                    </Text>
+                renderItem={({ item }) =>
+                    <ListItem number={item} />
+                }
+                ListFooterComponent={() => (
+                    <View style={{ height: 150, justifyContent: "center" }} >
+                        <ActivityIndicator size={40} color={colors.primary} />
+                    </View>
                 )}
             />
-        </CustomView>
+        </View>
+    )
+}
+
+interface PropsListItem {
+    number: number
+}
+export const ListItem = ({ number }: PropsListItem) => {
+
+    return (
+        <Image
+            source={{ uri: `https://picsum.photos/id/${number}/500/400` }}
+            style={{
+                height: 400,
+                width: "100%"
+            }}
+        />
     )
 }
