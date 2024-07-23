@@ -5,6 +5,7 @@ import { Titulo } from "../../components/ui/Titulo";
 import { FlatList } from "react-native-gesture-handler";
 import { colors } from "../../../config/theme/theme";
 import { ActivityIndicator } from "react-native";
+import { FadeInImage } from "../../components/ui/FadeInImage";
 
 export const InfiniteScrollScreen = () => {
 
@@ -46,12 +47,19 @@ interface PropsListItem {
 export const ListItem = ({ number }: PropsListItem) => {
 
     return (
-        <Image
-            source={{ uri: `https://picsum.photos/id/${number}/500/400` }}
+        <FadeInImage
+            uri={`https://picsum.photos/id/${number}/500/400`}
             style={{
                 height: 400,
                 width: "100%"
             }}
         />
+        // <Image
+        //     source={{ uri: `https://picsum.photos/id/${number}/500/400` }}
+        //     style={{
+        //         height: 400,
+        //         width: "100%"
+        //     }}
+        // />
     )
 }
