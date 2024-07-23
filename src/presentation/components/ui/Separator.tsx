@@ -6,7 +6,7 @@ interface Props {
 
 }
 
-export const Separetor = ({ style }: Props) => {
+export const Separator = ({ style }: Props) => {
     return (
         <View style= {{
             backgroundColor: colors.cardBackground

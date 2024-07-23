@@ -3,7 +3,7 @@ import { CustomView } from "../../components/ui/CustomView"
 import { Card } from "../../components/ui/Card"
 import { useState } from "react"
 import { CustomSwitch } from "../../components/ui/CustomSwitch"
-import { Separetor } from "../../components/ui/Separetor"
+import { Separator } from "../../components/ui/Separator"
 
 export const SwitchScreen = () => {
 
@@ -19,26 +19,23 @@ export const SwitchScreen = () => {
     return (
         <CustomView style={{ margin: 100 }}>
             <Card>
-
                 <CustomSwitch
                     isOn={state.isActive}
                     onChange={(value) => useState({ ...state, isActive: value })}
                     text="is Active"
                 />
-                <Separetor />
-
+                <Separator />
                 <CustomSwitch
                     isOn={state.opcion1}
                     onChange={(value) => useState({ ...state, opcion1: value })}
                     text="opcion 1"
                 />
-                <Separetor />
+                <Separator />
                 <CustomSwitch
                     isOn={state.opcion2}
                     onChange={(value) => useState({ ...state, opcion2: value })}
                     text="opcion 2"
                 />
-
                 {/* <Switch
                   trackColor={{false: '#767577', true: '#81b0ff'}}
                   thumbColor={isEnabled ? '#f5dd4b' : '#f4f3f4'}
@@ -46,9 +43,7 @@ export const SwitchScreen = () => {
                   onValueChange={toggleSwitch}
                   value={isEnabled}
                 /> */}
-
             </Card>
         </CustomView>
-
     )
 }

@@ -2,25 +2,24 @@ import { Pressable, StyleSheet, Text, View } from "react-native"
 import { colors } from "../../../config/theme/theme";
 import Icon from "react-native-vector-icons/Ionicons";
 import { useNavigation } from "@react-navigation/native";
-import { Separetor } from "./Separetor";
+import { Separator } from "./Separator";
 
 interface Props {
     name: string,
     icon: string,
     component: string,
 
-
     esPrimero?: boolean,
     esUltimo?: boolean
 }
 
-export const MenuItem = ({ name, icon, component, esPrimero = false, esUltimo = false}: Props) => {
+export const MenuItem = ({ name, icon, component, esPrimero = false, esUltimo = false }: Props) => {
 
     const navigation = useNavigation<any>();
 
     return (
-       <> <Pressable
-            onPress={ () => navigation.navigate(component) }
+        <> <Pressable
+            onPress={() => navigation.navigate(component)}
         >
             <View
                 style={{
@@ -35,11 +34,10 @@ export const MenuItem = ({ name, icon, component, esPrimero = false, esUltimo = 
             </View>
         </Pressable>
 
-{ !esUltimo && (
-    <Separetor/>
-) }
-
-
+            {
+                !esUltimo && (
+                    <Separator />
+                )}
         </>
     )
 }
