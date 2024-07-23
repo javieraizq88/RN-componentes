@@ -1,10 +1,10 @@
 import { SectionList, Text, View, ViewBase } from "react-native"
-import { CustomView } from "./CustomView"
-import { Titulo } from "./Titulo"
-import { Card } from "./Card"
-import { Subtitulo } from "./Subtitulo";
+import { CustomView } from "../../components/ui/CustomView"
+import { Titulo } from "../../components/ui/Titulo"
+import { Card } from "../../components/ui/Card"
+import { Subtitulo } from "../../components/ui/Subtitulo";
 import { colors } from "../../../config/theme/theme";
-import { Separator } from "./Separator";
+import { Separator } from "../../components/ui/Separator";
 import { useWindowDimensions } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 
