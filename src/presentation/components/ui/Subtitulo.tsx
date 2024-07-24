@@ -1,6 +1,8 @@
 import { useSafeAreaInsets } from "react-native-safe-area-context";
 import { colors, globalStyles } from "../../../config/theme/theme";
 import { Text } from "react-native";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 interface Props {
     text: string,
@@ -10,7 +12,8 @@ interface Props {
 
 export const Subtitulo = ({ text, safe = false, backgroundColor = colors.buttonTextColor }: Props) => {
     const { top } = useSafeAreaInsets();
-
+    const { colors } = useContext (ThemeContext);
+   
     return (
         <Text style={{
             ...globalStyles.subTitle,

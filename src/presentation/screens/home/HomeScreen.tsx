@@ -3,6 +3,7 @@ import { globalStyles } from "../../../config/theme/theme";
 
 import { Titulo } from "../../components/ui/Titulo";
 import { MenuItem } from "../../components/ui/MenuItem";
+import { CustomView } from "../../components/ui/CustomView";
 
 
 const animationMenuItems = [
@@ -72,43 +73,39 @@ const uiMenuItems = [
 
 export const HomeScreen = () => {
     return (
-        <View style={[globalStyles.mainContainer]} >
-            <View style={[globalStyles.globalMargin]} >
+        <CustomView margin >
+            <ScrollView>
+                <Titulo text="prueba del texro asdadsADS" safe />
+                {
+                    animationMenuItems.map((item, index) => (
+                        <MenuItem key={item.component} {...item}
+                            esPrimero={index === 0}
+                            esUltimo={index === animationMenuItems.length - 1}
+                        />
+                    ))
+                }
 
-                <ScrollView>
-                    <Titulo text="prueba del texro asdadsADS" safe />
-                    {
-                        animationMenuItems.map((item, index) => (
-                            <MenuItem key={item.component} {...item}
-                                esPrimero={index === 0}
-                                esUltimo={index === animationMenuItems.length - 1}
-                            />
-                        ))
-                    }
+                <View style={{ marginTop: 30 }} />
+                {
+                    menuItems.map((item, index) => (
+                        <MenuItem key={item.component} {...item}
+                            esPrimero={index === 0}
+                            esUltimo={index === menuItems.length - 1}
+                        />
+                    ))
+                }
 
-                    <View style={{ marginTop: 30 }} />
-                    {
-                        menuItems.map((item, index) => (
-                            <MenuItem key={item.component} {...item}
-                                esPrimero={index === 0}
-                                esUltimo={index === menuItems.length - 1}
-                            />
-                        ))
-                    }
+                <View style={{ marginTop: 30 }} />
+                {
+                    uiMenuItems.map((item, index) => (
+                        <MenuItem key={item.component} {...item}
+                            esPrimero={index === 0}
+                            esUltimo={index === uiMenuItems.length - 1}
+                        />
+                    ))
+                }
 
-                    <View style={{ marginTop: 30 }} />
-                    {
-                        uiMenuItems.map((item, index) => (
-                            <MenuItem key={item.component} {...item}
-                                esPrimero={index === 0}
-                                esUltimo={index === uiMenuItems.length - 1}
-                            />
-                        ))
-                    }
-
-                </ScrollView>
-
-            </View>
-        </View>
+            </ScrollView>
+        </CustomView>
     )
 }

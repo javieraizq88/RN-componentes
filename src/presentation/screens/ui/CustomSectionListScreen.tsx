@@ -1,12 +1,13 @@
-import { SectionList, Text, View, ViewBase } from "react-native"
+import { SectionList, Text } from "react-native"
 import { CustomView } from "../../components/ui/CustomView"
 import { Titulo } from "../../components/ui/Titulo"
 import { Card } from "../../components/ui/Card"
 import { Subtitulo } from "../../components/ui/Subtitulo";
-import { colors } from "../../../config/theme/theme";
 import { Separator } from "../../components/ui/Separator";
 import { useWindowDimensions } from "react-native";
 import { useSafeAreaInsets } from "react-native-safe-area-context";
+import { useContext } from "react";
+import { ThemeContext } from "../../context/ThemeContext";
 
 interface Houses {
     title: string;
@@ -94,7 +95,8 @@ export const CustomSectionListScreen = () => {
 
     const { height } = useWindowDimensions();
     const { top } = useSafeAreaInsets();
-
+    const { colors } = useContext (ThemeContext); 
+    
     return (
         <CustomView margin>
             <Titulo safe text="character list"></Titulo>

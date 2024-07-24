@@ -2,8 +2,9 @@ import { Image, ImageSourcePropType, NativeScrollEvent, NativeSyntheticEvent, Te
 import { colors, globalStyles } from "../../../config/theme/theme";
 import { FlatList } from "react-native-gesture-handler";
 import { Button } from "../../components/ui/Button";
-import { useRef, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import { useNavigation } from "@react-navigation/native";
+import { ThemeContext } from "../../context/ThemeContext";
 
 interface Slide {
     title: string;
@@ -33,7 +34,7 @@ export const SlidesScreen = () => {
 
     const [currentSlideIndex, setCurrentSlideIndex] = useState(0);
     const FlatListRef = useRef<FlatList>(null);
-const navigation = useNavigation()
+    const navigation = useNavigation()
 
     const onScroll = (event: NativeSyntheticEvent<NativeScrollEvent>) => {
         // para saber en q pagina del scroll estoy
@@ -46,13 +47,13 @@ const navigation = useNavigation()
     const scrollToSlide = (index: number) => {
         if (!FlatListRef.current) return
 
-        FlatListRef.current.scrollToIndex({ 
+        FlatListRef.current.scrollToIndex({
             index: index,
             animated: true,
         })
     }
 
-
+    const { colors } = useContext (ThemeContext); 
 
     return (
         <View style={{
@@ -81,7 +82,7 @@ const navigation = useNavigation()
                             right: 30,
                             width: 100
                         }}
-                        onPress={() => navigation.goBack() }
+                        onPress={() => navigation.goBack()}
                     />
                 ) : (
                     <Button

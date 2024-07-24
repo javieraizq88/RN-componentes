@@ -10,20 +10,30 @@ import { CustomSectionListScreen } from '../screens/ui/CustomSectionListScreen';
 import { ModalScreen } from '../screens/ui/ModalScreen';
 import { InfiniteScrollScreen } from '../screens/ui/InfiniteScrollScreen';
 import { SlidesScreen } from '../screens/ui/SlidesScreen';
+import { useContext } from 'react';
+import { ThemeContext } from '../context/ThemeContext';
 
 const Stack = createStackNavigator();
 
 export const Navigator =() => {
+
+  const { colors } = useContext (ThemeContext);
+
   return (
     <Stack.Navigator screenOptions={{
-        headerShown: false
+        headerShown: false,
+        cardStyle: {
+          backgroundColor: colors.background
+        }
     }}>
       <Stack.Screen name="Home" component={HomeScreen} />
       <Stack.Screen name="Animation1 01" component={Animation101Screen} />
       <Stack.Screen name="Animation1 02" component={Animation102Screen} />
+      
       <Stack.Screen name="Switch" component={SwitchScreen} />
       <Stack.Screen name="alert" component={AlertScreen} />
       <Stack.Screen name="Text Input" component={TextInputScreen} />
+      
       <Stack.Screen name="Pull To Refresh" component={PullToRefreshScreen} />
       <Stack.Screen name="Custom Section List" component={CustomSectionListScreen} />
       <Stack.Screen name="Modal" component={ModalScreen} />

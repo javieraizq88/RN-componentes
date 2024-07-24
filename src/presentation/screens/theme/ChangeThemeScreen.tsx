@@ -9,7 +9,6 @@ export const ChangeThemeScreen = () => {
 
   const { setTheme, currentTheme, colors } = useContext( ThemeContext );
 
-
   return (
     <CustomView margin>
       <Titulo text={`Cambiar tema: ${ currentTheme }`} safe />

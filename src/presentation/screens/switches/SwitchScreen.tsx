@@ -1,4 +1,3 @@
-import { Switch, Text, View } from "react-native"
 import { CustomView } from "../../components/ui/CustomView"
 import { Card } from "../../components/ui/Card"
 import { useState } from "react"
