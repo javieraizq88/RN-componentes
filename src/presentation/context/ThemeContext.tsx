@@ -1,6 +1,6 @@
 import {PropsWithChildren, createContext, useEffect, useState} from 'react';
 import {ThemeColors, darkColors, lightColors} from '../../config/theme/theme';
-import {AppState, Appearance, useColorScheme} from 'react-native';
+import { useColorScheme} from 'react-native';
 import { DarkTheme, DefaultTheme, NavigationContainer } from '@react-navigation/native';
 
 type ThemeColor = 'light' | 'dark';
@@ -16,6 +16,7 @@ interface ThemeContextProps {
 export const ThemeContext = createContext({} as ThemeContextProps);
 
 export const ThemeProvider = ({children}: PropsWithChildren) => {
+
   const colorScheme = useColorScheme();
   const [currentTheme, setCurrentTheme] = useState<ThemeColor>('light');
 
@@ -31,6 +32,7 @@ export const ThemeProvider = ({children}: PropsWithChildren) => {
     }
   }, [colorScheme]);
 
+  // otra opcion de cambiar el theme de dark a light usando useState
   // useEffect(() => {
   //   const subscription = AppState.addEventListener('change', nextAppState => {
   //     const colorScheme = Appearance.getColorScheme();
